@@ -21,9 +21,6 @@
 
   <!-- ios -->
   <platform name="ios">
-    <js-module src="www/ios/LaunchMyApp.js" name="LaunchMyApp">
-      <clobbers target="window.plugins.launchmyapp" />
-    </js-module>
 
     <config-file target="*-Info.plist" parent="CFBundleURLTypes">
       <array>
