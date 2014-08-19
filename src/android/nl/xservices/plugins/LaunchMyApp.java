@@ -21,21 +21,25 @@ public class LaunchMyApp extends CordovaPlugin {
         intent.setData(null);
         return true;
       } else {
-        callbackContext.error("App was not started via the launchmyapp URL scheme. Ignoring this errorcallback is the best approach.");
-        return false;
+        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR));
+        return true;
+        // callbackContext.error("App was not started via the launchmyapp URL scheme. Ignoring this errorcallback is the best approach.");
+        // return false;
       }
     } else {
-      callbackContext.error("This plugin only responds to the " + ACTION_CHECKINTENT + " action.");
-      return false;
+      // callbackContext.error("This plugin only responds to the " + ACTION_CHECKINTENT + " action.");
+      // return false;
+      callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR));
+      return true;
     }
   }
 
-  @Override
-  public void onNewIntent(Intent intent) {
-    final String intentString = intent.getDataString();
-    if (intent.getDataString() != null) {
-      intent.setData(null);
-      webView.loadUrl("javascript:handleOpenURL('" + intentString + "');");
-    }
-  }
+  // @Override
+  // public void onNewIntent(Intent intent) {
+  //   final String intentString = intent.getDataString();
+  //   if (intent.getDataString() != null) {
+  //     intent.setData(null);
+  //     webView.loadUrl("javascript:handleOpenURL('" + intentString + "');");
+  //   }
+  // }
 }

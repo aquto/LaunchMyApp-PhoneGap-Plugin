@@ -37,7 +37,7 @@
   <!-- android -->
   <platform name="android">
     <js-module src="www/android/LaunchMyApp.js" name="LaunchMyApp">
-      <clobbers target="window.plugins.launchmyapp" />
+      <clobbers target="window.plugins.launchMyApp" />
     </js-module>
 
     <config-file target="res/xml/config.xml" parent="/*">

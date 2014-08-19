@@ -1,14 +1,18 @@
-(function () {
-    "use strict";
-    
-    function triggerOpenURL() {
-          cordova.exec(
-              (typeof handleOpenURL == "function" ? handleOpenURL : null),
-              null,
-              "LaunchMyApp",
-              "checkIntent",
-              []);
-    }
+var exec = require('cordova/exec');
 
-  document.addEventListener("deviceready", triggerOpenURL, false);
-}());
+module.exports = {
+    checkURL: function(callback) {
+        exec(
+          function(url) {
+            if (typeof handleOpenURL === "function") {
+              handleOpenURL(url);
+            }
+            callback();
+          },
+          callback,
+          "LaunchMyApp",
+          "checkIntent",
+          []
+        );
+    }
+};
