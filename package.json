@@ -1,0 +1,26 @@
+{
+  "name": "LaunchMyApp-PhoneGap-Plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:aquto/LaunchMyApp-PhoneGap-Plugin.git",
+  "author": "Josh Runge <joshrunge@gmail.com>",
+  "license": "MIT",
+  "cordova": {
+    "id": "LaunchMyApp-PhoneGap-Plugin",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.1.0"
+    }
+  ]
+}
